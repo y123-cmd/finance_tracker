@@ -1,3 +1,4 @@
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +12,13 @@
     <header>
         <h1>Finance Tracker</h1>
         <nav>
-            <a href="{% url 'income_list' %}">Income</a>
-            <a href="{% url 'expense_list' %}">Expenses</a>
-            <a href="{% url 'add_income' %}">Add Income</a>
-            <a href="{% url 'add_expense' %}">Add Expense</a>
+            <a href="{% url 'tracker:income_list' %}">Income</a>
+            <a href="{% url 'tracker:expense_list' %}">Expenses</a>
+            <a href="{% url 'tracker:add_income' %}">Add Income</a>
+            <a href="{% url 'tracker:add_expense' %}">Add Expense</a>
+            <a href="{% url 'tracker:add_income' %}">Add Income</a>
+            <a href="{% url 'tracker:add_expense' %}">Add Expense</a>
+
         </nav>
     </header>
 
