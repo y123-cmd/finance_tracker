@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income List</title>
+</head>
+<body>
+    <h1>Income Records</h1>
+    <ul>
+        {% for income in incomes %}
+            <li>{{ income.source }} - Ksh {{ income.amount }} ({{ income.date }})</li>
+        {% empty %}
+            <li>No income records found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

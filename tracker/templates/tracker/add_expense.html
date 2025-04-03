@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Add Expense{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center text-danger">Add New Expense</h2>
+    <hr>
+    <form method="post" class="form">
+        {% csrf_token %}
+
+        <label for="description">Expense Description</label>
+        <input type="text" name="description" placeholder="e.g., Rent, Groceries" required>
+
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" placeholder="Enter amount" required>
+
+        <label for="date">Date</label>
+        <input type="date" name="date" required>
+
+        <label for="category">Category</label>
+        <select name="category">
+            <option value="Rent">Rent</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Entertainment">Entertainment</option>
+        </select>
+
+        <button type="submit">Add Expense</button>
+    </form>
+</div>
+{% endblock %}

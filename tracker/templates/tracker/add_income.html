@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Add Income{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center text-success">Add New Income</h2>
+    <hr>
+    <form method="post" class="form">
+        {% csrf_token %}
+
+        <label for="source">Source of Income</label>
+        <input type="text" name="source" placeholder="e.g., Salary, Freelance" required>
+
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" placeholder="Enter amount" required>
+
+        <label for="date">Date</label>
+        <input type="date" name="date" required>
+
+        <label for="category">Category</label>
+        <select name="category">
+            <option value="Salary">Salary</option>
+            <option value="Investment">Investment</option>
+            <option value="Gift">Gift</option>
+            <option value="Freelance">Freelance</option>
+        </select>
+
+        <button type="submit">Add Income</button>
+    </form>
+</div>
+{% endblock %}

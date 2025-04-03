@@ -1,0 +1,18 @@
+{% extends 'finance_app/base.html' %}
+{% block content %}
+<h2>Expense List</h2>
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+    {% for expense in expenses %}
+    <tr>
+        <td>{{ expense.category }}</td>
+        <td>Ksh {{ expense.amount }}</td>
+        <td>{{ expense.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
