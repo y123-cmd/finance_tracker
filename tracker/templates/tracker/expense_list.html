@@ -1,18 +1,17 @@
-{% extends 'finance_app/base.html' %}
-{% block content %}
-<h2>Expense List</h2>
-<table>
-    <tr>
-        <th>Category</th>
-        <th>Amount</th>
-        <th>Date</th>
-    </tr>
-    {% for expense in expenses %}
-    <tr>
-        <td>{{ expense.category }}</td>
-        <td>Ksh {{ expense.amount }}</td>
-        <td>{{ expense.date }}</td>
-    </tr>
-    {% endfor %}
-</table>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense List</title>
+</head>
+<body>
+    <h1>Expense Records</h1>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense.category }} - Ksh {{ expense.amount }} ({{ expense.date }})</li>
+        {% empty %}
+            <li>No expense records found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
