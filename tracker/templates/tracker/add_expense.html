@@ -2,30 +2,41 @@
 {% block title %}Add Expense{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2 class="text-center text-danger">Add New Expense</h2>
+<div class="container mt-5">
+    <h2 class="text-center text-danger mb-4">Add New Expense</h2>
     <hr>
     <form method="post" class="form">
         {% csrf_token %}
 
-        <label for="description">Expense Description</label>
-        <input type="text" name="description" placeholder="e.g., Rent, Groceries" required>
+        
+        <div class="mb-3">
+            <label for="expense_description" class="form-label">Expense Description</label>
+            {{ form.expense_description }}  <!-- Render form field for expense description -->
+        </div>
 
-        <label for="amount">Amount</label>
-        <input type="number" name="amount" placeholder="Enter amount" required>
+        
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount (Ksh)</label>
+            {{ form.amount }}  
+        </div>
 
-        <label for="date">Date</label>
-        <input type="date" name="date" required>
+        
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            {{ form.date }}  
+        </div>
 
-        <label for="category">Category</label>
-        <select name="category">
-            <option value="Rent">Rent</option>
-            <option value="Groceries">Groceries</option>
-            <option value="Transportation">Transportation</option>
-            <option value="Entertainment">Entertainment</option>
-        </select>
+        
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            {{ form.category }}  
+        </div>
 
-        <button type="submit">Add Expense</button>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-danger btn-lg">Add Expense</button>
+        </div>
     </form>
 </div>
 {% endblock %}
+
