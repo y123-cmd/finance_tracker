@@ -48,7 +48,7 @@ def update_income(request, income_id):
         form = IncomeForm(instance=income)
     return render(request, 'tracker/add_income.html', {'form': form})
 
-def delete_income(request, id):
+def delete_income(request, income_id):
     income = get_object_or_404(Income, pk=income_id)
     if request.method == 'POST':
         income.delete()
@@ -71,4 +71,5 @@ def delete_expense(request, expense_id):
     if request.method == 'POST':
         expense.delete()
         return redirect('tracker:expense_list')
-    return render(request, 'tracker/confirm_delete.html', {'item': expense, 'type': 'Expense'})
+    return render(request, 'tracker/confirm_delete.html', {'item': expense, 'type': 'Expense', 'return_url': 'tracker:expense_list'})
+
