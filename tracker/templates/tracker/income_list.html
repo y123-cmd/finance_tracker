@@ -14,6 +14,7 @@
                         <th>Source</th>
                         <th>Amount (Ksh)</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,12 @@
                             <td>{{ income.source }}</td>
                             <td>{{ income.amount }}</td>
                             <td>{{ income.date }}</td>
+
+                                <a href="{% url 'tracker:update_income' income.id %}" class="btn btn-warning btn-sm">Update</a>
+                                
+                                
+                                <a href="{% url 'tracker:delete_income' income.id %}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

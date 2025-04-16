@@ -15,6 +15,7 @@
                         <th>Category</th>
                         <th>Amount (Ksh)</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,11 @@
                             <td>{{ expense.category }}</td>
                             <td>{{ expense.amount }}</td>
                             <td>{{ expense.date }}</td>
+                            <td>{{expense.category}}</td>
+                            <td>
+                               <a href="{% url 'tracker:update_expense' expense.id %}" class="btn btn-warning btn-sm">Update</a>
+                               <a href="{% url 'tracker:delete_expense' expense.id %}" class="btn btn-danger btn-sm">Delete</a>
+                          </td> 
                         </tr>
                     {% endfor %}
                 </tbody>

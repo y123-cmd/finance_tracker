@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Confirm Update{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Confirm Update</h2>
+    <hr>
+    <h4>Are you sure you want to update the following details?</h4>
+    <div class="mb-3">
+        <label class="form-label"><strong>Description:</strong></label>
+        <p>{{ item.description }}</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"><strong>Amount:</strong></label>
+        <p>{{ item.amount }}</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"><strong>Date:</strong></label>
+        <p>{{ item.date }}</p>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"><strong>Category:</strong></label>
+        <p>{{ item.category }}</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success btn-lg">Confirm Update</button>
+        <a href="{% url return_url %}" class="btn btn-secondary btn-lg">Cancel</a>
+    </form>
+</div>
+{% endblock %}
